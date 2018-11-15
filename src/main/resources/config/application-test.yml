@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://db:3306/nba?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://db:3306/container_demo?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 12345
 
