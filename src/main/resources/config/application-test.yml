@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://db:3306/nba?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 123456
+    password: 12345
 
 mybatis:
   config-location: classpath:config/mybatis-config.xml
