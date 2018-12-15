@@ -20,7 +20,7 @@ sudo docker run \
     --name demo_db \
     -P \
     -d \
-    -e MYSQL_ROOT_PASSWORD=12345 \
+    -e MYSQL_ROOT_PASSWORD=123456 \
     -v logs:/logs \
     -v data:/var/lib/mysql \
     demo/mysql_db
