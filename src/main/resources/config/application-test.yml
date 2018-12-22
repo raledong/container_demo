@@ -6,11 +6,19 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://db:3306/container_demo?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://mysql.group25.svc.cluster.local:3306/container_demo?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 12345
+    password: password
 
 mybatis:
   config-location: classpath:config/mybatis-config.xml
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: cn.deerowl.model
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    cn.deerowl: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
