@@ -6,8 +6,8 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql.group25.svc.cluster.local:3306/container_demo?useUnicode=true&characterEncoding=utf-8
-    url: "jdbc:mysql://${DB_URL}/${DB_SCHEMA}"?useUnicode=true&characterEncoding=utf-8"
+#    url: jdbc:mysql://mysql.group25.svc.cluster.local:3306/container_demo?useUnicode=true&characterEncoding=utf-8
+    url: "jdbc:mysql://${DB_URL}/${DB_SCHEMA}?useUnicode=true&characterEncoding=utf-8"
 #    username: root
 #    password: password
     username: ${DB_USERNAME}
