@@ -4,7 +4,7 @@ mvn clean install dockerfile:build -Dmaven.test.skip=true
 
 #清除当前已有的容器
 CONTAINER_NAME=container_demo
-CONTAINER_VERSION=1.0
+CONTAINER_VERSION=2.0
 CONTAINER_ALREADY_EXIST="$(docker container ls -a | grep ${CONTAINER_NAME})"
 if [ "${CONTAINER_ALREADY_EXIST}" ];
 then
