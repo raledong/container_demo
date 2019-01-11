@@ -18,7 +18,7 @@ fi
 # 构建容器
 sudo docker run \
     --name demo_db \
-    -P \
+    -p 13306:3306 \
     -d \
     -e MYSQL_ROOT_PASSWORD=123456 \
     -v logs:/logs \

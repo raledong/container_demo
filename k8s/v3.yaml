@@ -1,0 +1,41 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: container-demo
+  namespace: group25
+spec:
+  selector:
+    matchLabels:
+      app: container-demo
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: container-demo
+    spec:
+      containers:
+      - name: javaweb
+        image: 10.1.1.243:18082/container_demo:3.0
+        imagePullPolicy: Always
+        ports: #暴露多个端口的话，必须为每个端口提供唯一的名字
+        - name: service
+          containerPort: 8081
+        - name: health
+          containerPort: 9090
+        env:
+        - name: DB_USERNAME
+          value: root
+        - name: DB_PASSWORD
+          value: password
+        - name: DB_URL
+          value: mysql.group25.svc.cluster.local:3306
+        - name: DB_SCHEMA
+          value: container_demo
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 9090
+          initialDelaySeconds: 5
+          periodSeconds: 10
+      imagePullSecrets:
+      - name: regcred

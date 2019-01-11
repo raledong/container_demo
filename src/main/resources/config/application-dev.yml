@@ -6,9 +6,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:32768/container_demo?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/container_demo?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 12345
+    password: root
 
 mybatis:
   config-location: classpath:config/mybatis-config.xml
@@ -23,3 +23,12 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+management:
+  server:
+    port: 9090
+  endpoint:
+    shutdown:
+      enabled: false
+    beans:
+      enabled: false
